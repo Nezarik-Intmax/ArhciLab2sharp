@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArhciLab2sharp", "ArhciLab2sharp\ArhciLab2sharp.csproj", "{C49E5C68-14E6-44F1-B386-D5269D15F2EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C49E5C68-14E6-44F1-B386-D5269D15F2EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C49E5C68-14E6-44F1-B386-D5269D15F2EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C49E5C68-14E6-44F1-B386-D5269D15F2EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C49E5C68-14E6-44F1-B386-D5269D15F2EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {284BB5A0-5033-4B4F-B5B5-9C220CCE3195}
+	EndGlobalSection
+EndGlobal
