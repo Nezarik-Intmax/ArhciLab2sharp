@@ -60,6 +60,12 @@ namespace ArhciLab2sharp {
                 Mess(buffer);
                 // отправка ответа
                 string str = "Сообщение получено";
+                switch (richTextBox1.Text) {
+                    case "maxim": str = "Maxim"; break;
+                    case "say my name": str = "Psina, haisenberg"; break;
+                    default: str = "Нераспознанный ввод"; break;
+                }
+                    
                 byte[] service = Encoding.Default.GetBytes(str);
                 client.Send(service, service.Length, 0);
             }
@@ -85,9 +91,11 @@ namespace ArhciLab2sharp {
         }
         // обновление информации в текстовом окне
         private void Mess(byte[] buf) {
-            richTextBox1.Text += Encoding.Default.GetString(buf);
+            richTextBox1.Text = Encoding.Default.GetString(buf);
             if (richTextBox1.Text == "maxim")
-                label1.Text += ", Maxim";
+                label1.Text = "Maxim";
+            if (richTextBox1.Text == "emil")
+                label1.Text = "Psina";
         }
         // метод для завершения приложения
         private void Quit() {
