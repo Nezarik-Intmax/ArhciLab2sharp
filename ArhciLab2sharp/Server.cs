@@ -86,6 +86,8 @@ namespace ArhciLab2sharp {
         // обновление информации в текстовом окне
         private void Mess(byte[] buf) {
             richTextBox1.Text += Encoding.Default.GetString(buf);
+            if (richTextBox1.Text == "maxim")
+                label1.Text += ", Maxim";
         }
         // метод для завершения приложения
         private void Quit() {
