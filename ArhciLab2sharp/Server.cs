@@ -55,14 +55,29 @@ namespace ArhciLab2sharp {
         private void SendMessage() {
             try {
                 // получение сообщения
-                buffer = new byte[256];
+                buffer = new byte[2560];
                 client.ReceiveFrom(buffer, ref end);
                 Mess(buffer);
                 // отправка ответа
                 string str = "Сообщение получено";
                 switch (richTextBox1.Text) {
-                    case "maxim": str = "Maxim"; break;
-                    case "say my name": str = "Psina, haisenberg"; break;
+                    case "@emil":
+                        str = "Welcome, Mr.Emil"; break;
+                    case "@maxim":
+                        str = "Maxim"; break;
+                    case "сокет":
+                        str = "Сокет — это программный интерфейс, обеспечивающий взаимодействие между приложениями."; break;
+                    case "сетевой порт":
+                        str = "Сетевой порт — используется для идентификации приложений."; break;
+                    case "ТСР":
+                        str = "TCP – протокол транспортного уровня, для доставки пакетов предварительно устанавливается соединение между процессором-отправителем и процессором-получателем."; break;
+                    case "say my name":
+                        if (authE) str = "Emil Safin";
+                        else
+                        {
+                            if (!authM) str = "I don't know"; 
+                            else str = "Maxim Churma";
+                        } break;
                     default: str = "Нераспознанный ввод"; break;
                 }
                     
@@ -89,13 +104,23 @@ namespace ArhciLab2sharp {
                 SendMessage();
             }
         }
+        bool authE = false;
+        bool authM = false;
         // обновление информации в текстовом окне
         private void Mess(byte[] buf) {
             richTextBox1.Text = Encoding.Default.GetString(buf);
-            if (richTextBox1.Text == "maxim")
+            if (richTextBox1.Text == "@maxim")
+            {
+                authM = true;
+                authE = false;
                 label1.Text = "Maxim";
-            if (richTextBox1.Text == "emil")
-                label1.Text = "Psina";
+            }
+            if (richTextBox1.Text == "@emil")
+            {
+                authE = true;
+                authM = false;
+                label1.Text = "Welcome, Mr.Emil";
+            }
         }
         // метод для завершения приложения
         private void Quit() {
